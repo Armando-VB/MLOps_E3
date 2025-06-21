@@ -19,8 +19,8 @@ Esta clase contiene métodos estáticos para realizar operaciones matemáticas b
 """
 
 class Calculadora:
-    @staticmethod # Decorador estático para que no se necesite instanciar la clase
-    @validar_entrada # Decorador para validar la entrada de los números
+    @staticmethod
+    @validar_entrada
     def sumar(a, b):
         resultado = float(a) + float(b)
         return f"El resultado de sumar {a} y {b} es: {resultado}"
