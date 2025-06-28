@@ -166,4 +166,3 @@ def JPBS_resta():
     resultado1 = calc.restar(10, 3)
     resultado2 = calc.restar(resultado1, 2)
     assert resultado2 == 5
-    
