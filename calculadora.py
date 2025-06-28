@@ -1,12 +1,12 @@
 """
-Calculadora Básica Python | Decoradores 
-Esta es una calculadora básica que permite realizar operaciones de suma, resta, multiplicación y división.
+Calculadora Básica Python | Decoradores
+Esta es una calculadora básica que permite realizar operaciones matemáticas.
 """
-#JPBS agrego esta linea de pruebaaaa
+import math
 
-#Esta es una nueva rama y estoy agregando esta modificacion
 
 def validar_entrada(func):
+    """Decorador para validar entradas y manejar errores."""
     def wrapper(*args):
         try:
             return func(*args)
@@ -16,62 +16,90 @@ def validar_entrada(func):
             return "Error: No se puede dividir por cero"
     return wrapper
 
-"""
-Clase Calculadora
-Esta clase contiene métodos estáticos para realizar operaciones matemáticas básicas.
-"""
 
 class Calculadora:
+    """Clase Calculadora con métodos estáticos para operaciones matemáticas."""
+
     @staticmethod
     @validar_entrada
     def sumar(a, b):
+        """Suma dos números."""
         resultado = float(a) + float(b)
         return f"El resultado de sumar {a} y {b} es: {resultado}"
 
     @staticmethod
     @validar_entrada
     def restar(a, b):
+        """Resta dos números."""
         return float(a) - float(b)
 
     @staticmethod
     @validar_entrada
     def multiplicar(a, b):
+        """Multiplica dos números."""
         return float(a) * float(b)
 
     @staticmethod
     @validar_entrada
     def dividir(a, b):
+        """Divide dos números."""
         return float(a) / float(b)
+
+    @staticmethod
+    @validar_entrada
+    def potencia(a, b):
+        """Calcula la potencia de un número."""
+        return float(a) ** float(b)
+
+    @staticmethod
+    @validar_entrada
+    def raiz_cuadrada(a):
+        """Calcula la raíz cuadrada de un número."""
+        if float(a) < 0:
+            return "Error: No se puede calcular la raíz cuadrada de un número negativo"
+        return math.sqrt(float(a))
 
 
 def main():
+    """Función principal que ejecuta la interfaz de la calculadora."""
     calc = Calculadora()
-    opcion = ""  
+    opcion = ""
 
-    while opcion != "5":
+    while opcion != "7":
         print("\nCalculadora Básica")
         print("1. Sumar")
         print("2. Restar")
         print("3. Multiplicar")
         print("4. Dividir")
-        print("5. Salir")
+        print("5. Potencia")
+        print("6. Raíz Cuadrada")
+        print("7. Salir")
 
-        opcion = input("\nSeleccione una operación (1-5): ")
+        opcion = input("\nSeleccione una operación (1-7): ")
 
-        if opcion == "5":
+        if opcion == "7":
             print("¡Hasta luego!")
             break
 
-        if opcion not in ("1", "2", "3", "4"):
+        if opcion not in ("1", "2", "3", "4", "5", "6"):
             print("Opción no válida")
             continue
 
-        try:
-            num1 = float(input("Primer número: "))
-            num2 = float(input("Segundo número: "))
-        except ValueError:
-            print("Por favor ingrese números válidos")
+        if opcion == "6":
+            num1 = input("Ingrese un número: ")
+            resultado = calc.raiz_cuadrada(num1)
+            print(f"Resultado: {resultado}")
             continue
+
+        if opcion == "5":
+            num1 = input("Ingrese la base: ")
+            num2 = input("Ingrese el exponente: ")
+            resultado = calc.potencia(num1, num2)
+            print(f"Resultado: {resultado}")
+            continue
+
+        num1 = input("Primer número: ")
+        num2 = input("Segundo número: ")
 
         operaciones = {
             "1": calc.sumar,
@@ -86,4 +114,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# fin del archivo calculadora.py - fin del archivo calculadora.py
