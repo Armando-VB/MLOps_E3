@@ -1,12 +1,9 @@
 from calculadora import Calculadora  # noqa: E402
 
-
 import sys
 import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-
-
 
 def test_potencia_y_raiz():
     """Prueba la integración entre potencia y raíz cuadrada."""
