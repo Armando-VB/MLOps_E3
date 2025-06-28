@@ -135,10 +135,10 @@ def test_division_integration():
     assert calc.dividir(15, 3) == 5.0
     assert calc.dividir(10, 0) == "Error: No se puede dividir por cero"
 
+
 def JPBS_resta():
     """Prueba de integracion para resta"""
     calc = Calculadora()
-    assert calc.restar(1,1) == 0
-    assert calc.restar(2,2) == 0
-    assert calc.restar(10,5) == 5
-
+    assert calc.restar(1, 1) == 0
+    assert calc.restar(2, 2) == 0
+    assert calc.restar(10, 5) == 5
