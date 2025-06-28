@@ -73,3 +73,11 @@ def test_multiplicacion():
     assert calc.multiplicar(-2, 3) == -6.0
     assert calc.multiplicar(0, 5) == 0.0
     assert calc.multiplicar('a', 2) == "Error: Ingrese números válidos"
+
+
+def JPBS_resta():
+    """Prueba la funcionalidad de la resta"""
+    calc = Calculadora()
+    assert calc.restar(1, 1) == 0
+    assert calc.restar(2, 2) == 0
+    assert calc.restar(10, 5) == 0

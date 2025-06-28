@@ -158,3 +158,11 @@ def test_multiplicacion_y_division():
     mult = calc.multiplicar(8, 2)
     div = calc.dividir(mult, 4)
     assert div == 4.0
+
+
+def JPBS_resta():
+    """Prueba de integracion para restar()"""
+    calc = Calculadora()
+    resultado1 = calc.restar(10, 3)
+    resultado2 = calc.restar(resultado1, 2)
+    assert resultado2 == 5
