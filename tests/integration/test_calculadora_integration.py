@@ -134,3 +134,27 @@ def test_division_integration():
     assert calc.dividir(20, 4) == 5.0
     assert calc.dividir(15, 3) == 5.0
     assert calc.dividir(10, 0) == "Error: No se puede dividir por cero"
+
+
+def test_multiplicacion_y_suma():
+    """Prueba integración: multiplicación y suma."""
+    calc = Calculadora()
+    mult = calc.multiplicar(2, 3)
+    suma = calc.sumar(mult, 4)
+    assert "10.0" in suma  # sumar devuelve string
+
+
+def test_multiplicacion_y_resta():
+    """Prueba integración: multiplicación y resta."""
+    calc = Calculadora()
+    mult = calc.multiplicar(5, 2)
+    resta = calc.restar(mult, 3)
+    assert resta == 7.0
+
+
+def test_multiplicacion_y_division():
+    """Prueba integración: multiplicación y división."""
+    calc = Calculadora()
+    mult = calc.multiplicar(8, 2)
+    div = calc.dividir(mult, 4)
+    assert div == 4.0
