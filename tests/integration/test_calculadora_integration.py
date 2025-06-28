@@ -1,9 +1,10 @@
-from calculadora import Calculadora  # noqa: E402
-
 import sys
 import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+
+from calculadora import Calculadora  # noqa: E402
+
 
 def test_potencia_y_raiz():
     """Prueba la integración entre potencia y raíz cuadrada."""
@@ -133,3 +134,11 @@ def test_division_integration():
     assert calc.dividir(20, 4) == 5.0
     assert calc.dividir(15, 3) == 5.0
     assert calc.dividir(10, 0) == "Error: No se puede dividir por cero"
+
+def JPBS_resta():
+    """Prueba de integracion para resta"""
+    calc = Calculadora()
+    assert calc.restar(1,1) == 0
+    assert calc.restar(2,2) == 0
+    assert calc.restar(10,5) == 5
+

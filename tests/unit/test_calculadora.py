@@ -63,3 +63,10 @@ def test_validacion_entrada_division():
     assert "Error: Ingrese números válidos" == calc.dividir("a", 3)
     assert "Error: Ingrese números válidos" == calc.dividir(2, "b")
     assert "Error: Ingrese números válidos" == calc.dividir("abc", "def")
+
+def JPBS_resta():
+    """Prueba la validación de entrada para división."""
+    calc = Calculadora()
+    assert "Error: Ingrese números válidos" == calc.restar("a", 3)
+    assert "Error: Ingrese números válidos" == calc.restar(2, "b")
+    assert "Error: Ingrese números válidos" == calc.restar("abc", "def")
