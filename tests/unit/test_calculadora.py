@@ -65,14 +65,14 @@ def test_validacion_entrada_division():
     assert "Error: Ingrese números válidos" == calc.dividir("abc", "def")
 
 
-def JPBS_resta():
-    """Prueba la validación de entrada para división."""
+def test_validacion_entrada_resta():
+    """Prueba la validación de entrada para resta."""
     calc = Calculadora()
     assert "Error: Ingrese números válidos" == calc.restar("a", 3)
     assert "Error: Ingrese números válidos" == calc.restar(2, "b")
     assert "Error: Ingrese números válidos" == calc.restar("abc", "def")
-    
-    
+
+
 def test_multiplicacion():
     """Prueba la funcionalidad de multiplicación."""
     calc = Calculadora()
@@ -83,10 +83,10 @@ def test_multiplicacion():
     assert calc.multiplicar('a', 2) == "Error: Ingrese números válidos"
 
 
-def JPBS_resta():
+def test_resta():
     """Prueba la funcionalidad de la resta."""
     calc = Calculadora()
     assert calc.restar(1, 1) == 0
     assert calc.restar(2, 2) == 0
-    assert calc.restar(10, 5) == 0
+    assert calc.restar(10, 5) == 5
 
