@@ -1,12 +1,14 @@
 """
-Calculadora Básica Python | Decoradores
-Esta es una calculadora básica que permite realizar operaciones matemáticas.
+Calculadora Básica Python | Rama feature/raiz-potencia
+Esta calculadora incluye solo las funcionalidades de potencia y raíz cuadrada.
 """
+
 import math
 
 
 def validar_entrada(func):
     """Decorador para validar entradas y manejar errores."""
+
     def wrapper(*args):
         try:
             return func(*args)
@@ -14,6 +16,7 @@ def validar_entrada(func):
             return "Error: Ingrese números válidos"
         except ZeroDivisionError:
             return "Error: No se puede dividir por cero"
+
     return wrapper
 
 
