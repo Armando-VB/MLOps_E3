@@ -142,3 +142,4 @@ def JPBS_resta():
     assert calc.restar(1, 1) == 0
     assert calc.restar(2, 2) == 0
     assert calc.restar(10, 5) == 5
+    
