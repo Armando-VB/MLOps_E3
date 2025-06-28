@@ -63,3 +63,13 @@ def test_validacion_entrada_division():
     assert "Error: Ingrese números válidos" == calc.dividir("a", 3)
     assert "Error: Ingrese números válidos" == calc.dividir(2, "b")
     assert "Error: Ingrese números válidos" == calc.dividir("abc", "def")
+
+
+def test_multiplicacion():
+    """Prueba la funcionalidad de multiplicación."""
+    calc = Calculadora()
+    assert calc.multiplicar(3, 4) == 12.0
+    assert calc.multiplicar(2.5, 4) == 10.0
+    assert calc.multiplicar(-2, 3) == -6.0
+    assert calc.multiplicar(0, 5) == 0.0
+    assert calc.multiplicar('a', 2) == "Error: Ingrese números válidos"
