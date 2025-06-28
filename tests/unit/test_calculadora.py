@@ -26,6 +26,24 @@ def test_raiz_cuadrada():
     assert error_msg == calc.raiz_cuadrada(-1)
 
 
+def test_division():
+    """Prueba la funcionalidad de división."""
+    calc = Calculadora()
+    assert calc.dividir(10, 2) == 5.0
+    assert calc.dividir(15, 3) == 5.0
+    assert calc.dividir(7, 2) == 3.5
+    assert calc.dividir(0, 5) == 0.0
+    assert calc.dividir(-10, 2) == -5.0
+
+
+def test_division_por_cero():
+    """Prueba la división por cero."""
+    calc = Calculadora()
+    assert calc.dividir(10, 0) == "Error: No se puede dividir por cero"
+    assert calc.dividir(0, 0) == "Error: No se puede dividir por cero"
+    assert calc.dividir(-5, 0) == "Error: No se puede dividir por cero"
+
+
 def test_validacion_entrada_potencia():
     """Prueba la validación de entrada para potencia."""
     calc = Calculadora()
@@ -37,3 +55,11 @@ def test_validacion_entrada_raiz():
     """Prueba la validación de entrada para raíz cuadrada."""
     calc = Calculadora()
     assert "Error: Ingrese números válidos" == calc.raiz_cuadrada("abc")
+
+
+def test_validacion_entrada_division():
+    """Prueba la validación de entrada para división."""
+    calc = Calculadora()
+    assert "Error: Ingrese números válidos" == calc.dividir("a", 3)
+    assert "Error: Ingrese números válidos" == calc.dividir(2, "b")
+    assert "Error: Ingrese números válidos" == calc.dividir("abc", "def")
