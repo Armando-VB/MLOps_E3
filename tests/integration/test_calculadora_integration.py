@@ -143,3 +143,35 @@ def JPBS_resta():
     assert calc.restar(2, 2) == 0
     assert calc.restar(10, 5) == 5
     
+
+def test_multiplicacion_y_suma():
+    """Prueba integración: multiplicación y suma."""
+    calc = Calculadora()
+    mult = calc.multiplicar(2, 3)
+    suma = calc.sumar(mult, 4)
+    assert "10.0" in suma  # sumar devuelve string
+
+
+def test_multiplicacion_y_resta():
+    """Prueba integración: multiplicación y resta."""
+    calc = Calculadora()
+    mult = calc.multiplicar(5, 2)
+    resta = calc.restar(mult, 3)
+    assert resta == 7.0
+
+
+def test_multiplicacion_y_division():
+    """Prueba integración: multiplicación y división."""
+    calc = Calculadora()
+    mult = calc.multiplicar(8, 2)
+    div = calc.dividir(mult, 4)
+    assert div == 4.0
+
+
+def JPBS_resta():
+    """Prueba de integracion para restar."""
+    calc = Calculadora()
+    resultado1 = calc.restar(10, 3)
+    resultado2 = calc.restar(resultado1, 2)
+    assert resultado2 == 5
+
