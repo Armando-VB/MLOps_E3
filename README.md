@@ -1,2 +1,2 @@
-# MLOps_E3
-Armando-VB/MLOps_E3
+## Autor
+Equipo MLOps E3
