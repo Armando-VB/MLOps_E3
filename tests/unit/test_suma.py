@@ -11,4 +11,3 @@ def test_sumar_decimales():
 
 def test_sumar_entrada_invalida():
     assert Calculadora.sumar("a", 3) == "Error: Ingrese números válidos"
-    
